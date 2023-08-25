@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    background: #181818;
+}
+
+#container {
+    height: 100vh;
+    display: flex;
+
+    #nav-menu {
+        width: 20%;
+        padding: 15px;
+        background: #121212;
+
+        button {
+            width: 100%;
+            padding: 10px;
+            color: #ECF3F4;
+            text-align: left;
+            margin-bottom: 15px;
+
+            border: none;
+            background: none;
+            font-size: 14px;
+
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: 20px;
+                height: 20px;
+                fill: #FF893B;
+                margin-right: 15px;
+            }
+
+            &:last-child {
+                width: auto;
+                bottom: 0;
+                position: absolute;
+                
+                border-radius: 5px;
+                box-shadow: 02px 02px 02px #C4DCDF,
+                            -2px -2px 02px #C4DCDF;
+            }
+        }
+
+        .active-tab {
+            border-radius: 5px;
+            background: #181818;
+
+            box-shadow: 02px 02px 02px #FF893B,
+                -2px -2px 02px #FF893B;
+        }
+    }
+
+    #notes-list {
+        width: 40%;
+        padding: 10px;
+
+        color: #ECF3F4;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow-y: scroll;
+
+        .note-item {
+            width: 93%;
+            background: #212124;
+            border-radius: 5px;
+            padding: 10px 15px;
+            height: fit-content;
+
+            &:nth-last-child(n+2) {
+                margin-bottom: 10px;
+            }
+
+            .note-short-description {
+                font-size: medium;
+                text-align: justify;
+                padding-top: 10px;
+                border-top: 1px solid;
+            }
+
+            .note-action {
+                color: #C4DCDF;
+                height: fit-content;
+                padding-bottom: 10px;
+                font-size: large;
+                font-weight: bold;
+                border-bottom: 1px solid;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .button-block {
+                    display: flex;
+
+                    button {
+                        width: 25px;
+                        height: 25px;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: none;
+                        border: 1.5px solid #729CA2;
+                        background: #729CA2;
+                        border-radius: 5px;
+
+                        &:last-child {
+                            margin-left: 10px;
+                            background: #FF893B;
+                            border-color: #FF893B;
+                        }
+
+                        svg {
+                            width: 15px;
+                            height: 15px;
+                            fill: #212124;
+                        }
+
+                        &:active {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #middle-line {
+        margin: 25px 0;
+        width: 2px;
+        background: #C4DCDF;
+        border-radius: 2px;
+    }
+
+    #display-edit {
+        width: 40%;
+        padding: 10px;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        #title-input-div {
+            width: 95%;
+            display: none;
+
+            input {
+                width: 100%;
+                border: none;
+                outline: none;
+                color: #ECF3F4;
+                background: none;
+                padding: 10px 0px;
+                font-weight: bold;
+                border-bottom: 2px solid;
+
+                &:focus {
+                    border-bottom: 2px solid #729CA2;
+                }
+            }
+        }
+
+        #description-input-div {
+            width: 95%;
+            height: 80%;
+            display: none;
+
+            textarea {
+                width: 100%;
+                height: 100%;
+                border: none;
+                resize: none;
+                outline: none;
+                color: #ECF3F4;
+                margin-top: 10px;
+                background: none;
+                padding-bottom: 10px;
+            }
+        }
+
+        #button-block-input-area {
+            right: 20px;
+            bottom: 20px;
+            position: absolute;
+            display: none;
+
+            button {
+                padding: 10px 15px;
+                border: none;
+                color: #ECF3F4;
+                background: none;
+                border-radius: 5px;
+
+                &:first-child {
+                    background: #FF893B;
+                }
+
+                &:last-child {
+                    margin-left: 10px;
+                    background: #729CA2;
+                }
+
+                &:active {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
